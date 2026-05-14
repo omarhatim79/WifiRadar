@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <!-- Logo icon -->
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/ic_logo"
+        android:contentDescription="@null"
+        app:tint="@color/lime_400"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="48dp" />
+
+    <!-- "WiFi Radar" brand text -->
+    <TextView
+        android:id="@+id/tv_brand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WiFi Radar"
+        android:textAppearance="@style/TextAppearance.WifiRadar.H2.Bold"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/iv_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/tv_brand_sub"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Professional Network Analysis\n&amp; Security Tool"
+        android:gravity="center"
+        android:alpha="0.6"
+        android:textAppearance="@style/TextAppearance.WifiRadar.ParagraphMedium.Regular"
+        android:textColor="@color/white"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_brand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Feature badges -->
+    <LinearLayout
+        android:id="@+id/badge_1"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:baselineAligned="false"
+        android:background="@drawable/bg_ob_badge"
+        android:paddingStart="16dp"
+        android:paddingEnd="20dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_brand_sub"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_check_lime"
+            android:contentDescription="@null" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Friendly User Interface"
+            android:textAppearance="@style/TextAppearance.WifiRadar.ParagraphSmall.SemiBold"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/badge_2"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:baselineAligned="false"
+        android:background="@drawable/bg_ob_badge"
+        android:paddingStart="16dp"
+        android:paddingEnd="20dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/badge_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_check_lime"
+            android:contentDescription="@null" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="7 Powerful Features"
+            android:textAppearance="@style/TextAppearance.WifiRadar.ParagraphSmall.SemiBold"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/badge_3"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:baselineAligned="false"
+        android:background="@drawable/bg_ob_badge"
+        android:paddingStart="16dp"
+        android:paddingEnd="20dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/badge_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_check_lime"
+            android:contentDescription="@null" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Real-time Analysis"
+            android:textAppearance="@style/TextAppearance.WifiRadar.ParagraphSmall.SemiBold"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <!-- Headline -->
+    <TextView
+        android:id="@+id/tv_headline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ready to Analyze\nYour Network?"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.WifiRadar.H3.Bold"
+        android:textColor="@color/white"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintTop_toBottomOf="@id/badge_3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Subtext -->
+    <TextView
+        android:id="@+id/tv_subtext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Start monitoring, securing, and optimizing\nyour WiFi — right now"
+        android:gravity="center"
+        android:alpha="0.6"
+        android:textAppearance="@style/TextAppearance.WifiRadar.ParagraphMedium.Regular"
+        android:textColor="@color/white"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_headline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -64,6 +64,10 @@
     <string name="detection_reason">Detection Reason:</string>
     <string name="block_network">Block Network</string>
 
+    <!-- Onboarding -->
+    <string name="ob_continue">Continue</string>
+    <string name="ob_get_started">Get Started</string>
+
     <!-- Hidden Network page -->
     <string name="scan">Scan</string>
     <string name="about_hidden_networks">About Hidden Networks</string>

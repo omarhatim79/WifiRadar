@@ -35,6 +35,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<MaterialCardView>(R.id.card_wifi_optimization).setOnClickListener { forward(WifiOptimizationActivity::class.java) }
         findViewById<MaterialCardView>(R.id.card_channel_rating).setOnClickListener { forward(ChannelRatingActivity::class.java) }
 
+        findViewById<View>(R.id.btn_filter).setOnClickListener { forward(OnboardingActivity::class.java) }
+
         findViewById<View>(R.id.nav_capture).setOnClickListener { navTo(CaptureActivity::class.java) }
         findViewById<View>(R.id.nav_hidden).setOnClickListener { navTo(HiddenNetworksActivity::class.java) }
         findViewById<View>(R.id.nav_security).setOnClickListener { navTo(SecurityActivity::class.java) }
