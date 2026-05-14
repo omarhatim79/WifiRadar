@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">WifiRadar</string>
+    <string name="app_title">Wifi Radar</string>
+    <string name="filter">Filter</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_capture">Capture</string>
+    <string name="nav_hidden">Hidden</string>
+    <string name="nav_security">Security</string>
+    <string name="nav_rating">Rating</string>
+
+    <!-- Home screen features -->
+    <string name="feature_packet_capture">Packet\nCapture</string>
+    <string name="feature_gaming_voip">Gaming /\nVOIP Test</string>
+    <string name="feature_hidden_networks">Hidden Networks</string>
+    <string name="feature_hidden_networks_sub">Detect hidden SSIDs nearby</string>
+    <string name="feature_rogue_ap">Rogue AP Detection</string>
+    <string name="feature_rogue_ap_sub">Find unauthorized access points</string>
+    <string name="feature_wifi_optimization">WiFi Optimization</string>
+    <string name="feature_wifi_optimization_sub">Boost your connection speed</string>
+    <string name="feature_channel_rating">Channel Rating</string>
+    <string name="feature_channel_rating_sub">Find the best Wi-Fi channel</string>
+
+    <!-- WiFi Optimization page -->
+    <string name="analyze">Analyze</string>
+    <string name="wifi_score">72/100</string>
+    <string name="wifi_score_label">Good - room for improvement</string>
+    <string name="opt_high_priority">High Priority</string>
+    <string name="opt_recommendations">Recommendations</string>
+    <string name="opt_applied">Applied</string>
+    <string name="opt_learn_more">Learn More</string>
+    <string name="opt_apply_now">Apply Now</string>
+    <string name="badge_high_impact">High Impact</string>
+    <string name="badge_moderate_impact">Moderate Impact</string>
+    <string name="badge_low_impact">Low Impact</string>
+    <string name="badge_channel">Channel</string>
+
+    <!-- Channel Rating page -->
+    <string name="rescan">Rescan</string>
+    <string name="recommended_channels">Recommended Channels</string>
+    <string name="channel_utilization_24">Channel Utilization (2.4 GHz)</string>
+    <string name="signal_strength_overview">Signal Strength Overview</string>
+
+    <!-- Packet Capture page -->
+    <string name="capture_start">Start</string>
+    <string name="packets_label">Packets</string>
+    <string name="data_rate_label">Data Rate</string>
+    <string name="capture_settings">Capture Settings</string>
+    <string name="monitor_mode">Monitor Mode</string>
+    <string name="promiscuous_mode">Promiscuous Mode</string>
+    <string name="export_pcap">Export Capture (PCAP)</string>
+    <string name="live_packet_feed">Live Packet Feed</string>
+    <string name="packet_from">FROM</string>
+    <string name="packet_to">TO</string>
+    <string name="packet_info">INFO</string>
+
+    <!-- Rogue AP page -->
+    <string name="security_alert">Security Alert</string>
+    <string name="security_alert_desc">1 critical threats detected. Avoid connecting to suspicious networks.</string>
+    <string name="total_threats">Total\nThreats</string>
+    <string name="critical_threat">Critical\nThreat</string>
+    <string name="items_protected">Items\nProtected</string>
+    <string name="detection_reason">Detection Reason:</string>
+    <string name="block_network">Block Network</string>
+
+    <!-- Hidden Network page -->
+    <string name="scan">Scan</string>
+    <string name="about_hidden_networks">About Hidden Networks</string>
+    <string name="hidden_info_desc">Hidden networks don\'t broadcast their SSID. This scanner detects them through probe requests and timing analysis.</string>
+    <string name="networks_found">Networks Found</string>
+    <string name="scan_progress">Scan Progress</string>
+    <string name="view_details">View Details</string>
+</resources>

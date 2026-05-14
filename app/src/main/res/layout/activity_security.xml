@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:fitsSystemWindows="true">
+
+    <!-- ── HEADER ──────────────────────────────────────────────────── -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/black"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_filter_button"
+            android:src="@drawable/ic_chevron_left"
+            android:scaleType="center"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/feature_rogue_ap"
+            android:textAppearance="@style/TextAppearance.WifiRadar.H5.SemiBold"
+            android:textColor="@color/white" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/btn_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_rescan_button"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_search"
+                android:contentDescription="@null" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/scan"
+                android:textAppearance="@style/TextAppearance.WifiRadar.OverlineSmall.SemiBold"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- ── BOTTOM NAV ───────────────────────────────────────────────── -->
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#1AFFFFFF" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Home tab (inactive) -->
+            <LinearLayout
+                android:id="@+id/nav_home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:alpha="0.45"
+                android:clickable="true"
+                android:focusable="true">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="@android:color/transparent" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_nav_home"
+                    android:contentDescription="@null" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/nav_home"
+                    android:textAppearance="@style/TextAppearance.WifiRadar.LabelXSmall.Medium"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!-- Capture tab (inactive) -->
+            <LinearLayout
+                android:id="@+id/nav_capture"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:alpha="0.45"
+                android:clickable="true"
+                android:focusable="true">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="@android:color/transparent" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_nav_capture"
+                    android:contentDescription="@null" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/nav_capture"
+                    android:textAppearance="@style/TextAppearance.WifiRadar.LabelXSmall.Medium"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!-- Hidden tab (inactive) -->
+            <LinearLayout
+                android:id="@+id/nav_hidden"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:alpha="0.45"
+                android:clickable="true"
+                android:focusable="true">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="@android:color/transparent" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_nav_hidden"
+                    android:contentDescription="@null" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/nav_hidden"
+                    android:textAppearance="@style/TextAppearance.WifiRadar.LabelXSmall.Medium"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!-- Security tab (ACTIVE) -->
+            <LinearLayout
+                android:id="@+id/nav_security"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:clickable="true"
+                android:focusable="true">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="@color/primary_500" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_nav_security"
+                    android:contentDescription="@null" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/nav_security"
+                    android:textAppearance="@style/TextAppearance.WifiRadar.LabelXSmall.Medium"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!-- Channel Rating tab (inactive) -->
+            <LinearLayout
+                android:id="@+id/nav_channel_rating"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:alpha="0.45"
+                android:clickable="true"
+                android:focusable="true">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="@android:color/transparent" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_star"
+                    android:tint="@color/white"
+                    android:contentDescription="@null" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/nav_rating"
+                    android:textAppearance="@style/TextAppearance.WifiRadar.LabelXSmall.Medium"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ── SCROLLABLE CONTENT ────────────────────────────────────────── -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <!-- ── SECURITY ALERT CARD ───────────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_alert_card"
+                android:padding="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <FrameLayout
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/bg_opt_icon">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_information_circle"
+                            android:contentDescription="@null" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/security_alert"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelMedium.SemiBold"
+                        android:textColor="@color/destructive_500" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/security_alert_desc"
+                    android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.Regular"
+                    android:textColor="@color/destructive_900" />
+            </LinearLayout>
+
+            <!-- ── STATS CARD ─────────────────────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_content_panel"
+                android:padding="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp">
+
+                <!-- Total Threats -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_stat_panel"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.H2.SemiBold"
+                        android:textColor="@color/destructive_500" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/total_threats"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.OverlineSmall.SemiBold"
+                        android:textColor="@color/gray_600" />
+                </LinearLayout>
+
+                <View android:layout_width="10dp" android:layout_height="1dp" />
+
+                <!-- Critical Threat -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_stat_panel"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.H2.SemiBold"
+                        android:textColor="@color/destructive_500" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/critical_threat"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.OverlineSmall.SemiBold"
+                        android:textColor="@color/gray_600" />
+                </LinearLayout>
+
+                <View android:layout_width="10dp" android:layout_height="1dp" />
+
+                <!-- Items Protected -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_stat_panel"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.H2.SemiBold"
+                        android:textColor="@color/success_500" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/items_protected"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.OverlineSmall.SemiBold"
+                        android:textColor="@color/gray_600" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ── ROGUE CARD 1: Free Wifi ─────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_opt_card"
+                android:padding="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp">
+
+                <!-- SSID row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <FrameLayout
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/bg_opt_icon">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_wifi"
+                            android:contentDescription="@null" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        android:text="Free Wifi"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold"
+                        android:textColor="@color/white"
+                        android:textAllCaps="true" />
+                </LinearLayout>
+
+                <!-- MAC + time row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="C3:D4:E5:F6:A7:B8"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold"
+                        android:textColor="@color/gray_500"
+                        android:textAllCaps="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2 min ago"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold"
+                        android:textColor="@color/gray_500"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <!-- Detection reason panel -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_chip_channel"
+                    android:padding="12dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/detection_reason"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="SSID matches legitimate network"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.Regular"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <!-- Tags row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="EVIL TWIN"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelXSmall.SemiBold"
+                        android:textColor="@color/gray_600"
+                        android:background="@drawable/bg_badge_neutral"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="MITM ATTACK"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelXSmall.SemiBold"
+                        android:textColor="@color/gray_600"
+                        android:background="@drawable/bg_badge_neutral"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp" />
+                </LinearLayout>
+
+                <!-- Action buttons row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/view_details"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.Medium"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:background="@drawable/bg_button_ghost"
+                        android:paddingTop="9dp"
+                        android:paddingBottom="9dp" />
+
+                    <View android:layout_width="12dp" android:layout_height="1dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/block_network"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.Medium"
+                        android:textColor="@color/destructive_50"
+                        android:gravity="center"
+                        android:background="@drawable/bg_button_destructive"
+                        android:paddingTop="9dp"
+                        android:paddingBottom="9dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ── ROGUE CARD 2: Public Wifi ──────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_opt_card"
+                android:padding="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp">
+
+                <!-- SSID row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <FrameLayout
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/bg_opt_icon">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_wifi"
+                            android:contentDescription="@null" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        android:text="Public Wifi"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold"
+                        android:textColor="@color/white"
+                        android:textAllCaps="true" />
+                </LinearLayout>
+
+                <!-- MAC + time row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="B1:C2:D3:E4:F5:G6"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold"
+                        android:textColor="@color/gray_500"
+                        android:textAllCaps="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5 min ago"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold"
+                        android:textColor="@color/gray_500"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <!-- Detection reason panel -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_chip_channel"
+                    android:padding="12dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/detection_reason"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="SSID spoof detected"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.Regular"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <!-- Tags row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PHISHING"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelXSmall.SemiBold"
+                        android:textColor="@color/gray_600"
+                        android:background="@drawable/bg_badge_neutral"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="USER CREDENTIAL THEFT"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelXSmall.SemiBold"
+                        android:textColor="@color/gray_600"
+                        android:background="@drawable/bg_badge_neutral"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp" />
+                </LinearLayout>
+
+                <!-- Action buttons row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/view_details"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.Medium"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:background="@drawable/bg_button_ghost"
+                        android:paddingTop="9dp"
+                        android:paddingBottom="9dp" />
+
+                    <View android:layout_width="12dp" android:layout_height="1dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/block_network"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.Medium"
+                        android:textColor="@color/destructive_50"
+                        android:gravity="center"
+                        android:background="@drawable/bg_button_destructive"
+                        android:paddingTop="9dp"
+                        android:paddingBottom="9dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ── ROGUE CARD 3: Guest Network ────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_opt_card"
+                android:padding="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp">
+
+                <!-- SSID row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <FrameLayout
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/bg_opt_icon">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_wifi"
+                            android:contentDescription="@null" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        android:text="Guest Network"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold"
+                        android:textColor="@color/white"
+                        android:textAllCaps="true" />
+                </LinearLayout>
+
+                <!-- MAC + time row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="A1:B2:C3:D4:E5:F6"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold"
+                        android:textColor="@color/gray_500"
+                        android:textAllCaps="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10 min ago"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold"
+                        android:textColor="@color/gray_500"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <!-- Detection reason panel -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_chip_channel"
+                    android:padding="12dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/detection_reason"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Unsecured network access"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.Regular"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <!-- Tags row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MAN-IN-THE-MIDDLE"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelXSmall.SemiBold"
+                        android:textColor="@color/gray_600"
+                        android:background="@drawable/bg_badge_neutral"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="DATA INTERCEPTION"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelXSmall.SemiBold"
+                        android:textColor="@color/gray_600"
+                        android:background="@drawable/bg_badge_neutral"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp" />
+                </LinearLayout>
+
+                <!-- Action buttons row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/view_details"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.Medium"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:background="@drawable/bg_button_ghost"
+                        android:paddingTop="9dp"
+                        android:paddingBottom="9dp" />
+
+                    <View android:layout_width="12dp" android:layout_height="1dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/block_network"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.Medium"
+                        android:textColor="@color/destructive_50"
+                        android:gravity="center"
+                        android:background="@drawable/bg_button_destructive"
+                        android:paddingTop="9dp"
+                        android:paddingBottom="9dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

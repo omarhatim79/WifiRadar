@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:fitsSystemWindows="true">
+
+    <!-- ── HEADER ──────────────────────────────────────────────────── -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/black"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_filter_button"
+            android:src="@drawable/ic_chevron_left"
+            android:scaleType="center"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:layout_width="188dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Packet Capture"
+            android:textAppearance="@style/TextAppearance.WifiRadar.H5.SemiBold"
+            android:textColor="@color/white" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/btn_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_rescan_button"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp">
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/ic_play"
+                android:contentDescription="@null" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/capture_start"
+                android:textAppearance="@style/TextAppearance.WifiRadar.OverlineSmall.SemiBold"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- ── BOTTOM NAV ───────────────────────────────────────────────── -->
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#1AFFFFFF" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Home tab (inactive) -->
+            <LinearLayout
+                android:id="@+id/nav_home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:alpha="0.45"
+                android:clickable="true"
+                android:focusable="true">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="@android:color/transparent" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_nav_home"
+                    android:contentDescription="@null" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/nav_home"
+                    android:textAppearance="@style/TextAppearance.WifiRadar.LabelXSmall.Medium"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!-- Capture tab (ACTIVE) -->
+            <LinearLayout
+                android:id="@+id/nav_capture"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:clickable="true"
+                android:focusable="true">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="@color/primary_500" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_nav_capture"
+                    android:contentDescription="@null" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/nav_capture"
+                    android:textAppearance="@style/TextAppearance.WifiRadar.LabelXSmall.Medium"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!-- Hidden tab (inactive) -->
+            <LinearLayout
+                android:id="@+id/nav_hidden"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:alpha="0.45"
+                android:clickable="true"
+                android:focusable="true">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="@android:color/transparent" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_nav_hidden"
+                    android:contentDescription="@null" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/nav_hidden"
+                    android:textAppearance="@style/TextAppearance.WifiRadar.LabelXSmall.Medium"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!-- Security tab (inactive) -->
+            <LinearLayout
+                android:id="@+id/nav_security"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:alpha="0.45"
+                android:clickable="true"
+                android:focusable="true">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="@android:color/transparent" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_nav_security"
+                    android:contentDescription="@null" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/nav_security"
+                    android:textAppearance="@style/TextAppearance.WifiRadar.LabelXSmall.Medium"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!-- Channel Rating tab (inactive) -->
+            <LinearLayout
+                android:id="@+id/nav_channel_rating"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:alpha="0.45"
+                android:clickable="true"
+                android:focusable="true">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="@android:color/transparent" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_star"
+                    android:tint="@color/white"
+                    android:contentDescription="@null" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/nav_rating"
+                    android:textAppearance="@style/TextAppearance.WifiRadar.LabelXSmall.Medium"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ── SCROLLABLE CONTENT ────────────────────────────────────────── -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <!-- ── STATS CARDS ────────────────────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_content_panel"
+                android:padding="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp">
+
+                <!-- Packets card -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_feature_button"
+                    android:padding="16dp">
+
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_opt_icon">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_packet"
+                            android:contentDescription="@null" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/packets_label"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.OverlineSmall.SemiBold"
+                        android:textColor="@color/gray_400" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="24,587"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.H6.ExtraBold"
+                        android:textColor="@color/neutral_50" />
+                </LinearLayout>
+
+                <View android:layout_width="16dp" android:layout_height="1dp" />
+
+                <!-- Data Rate card -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_feature_button"
+                    android:padding="16dp">
+
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_opt_icon">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_data"
+                            android:contentDescription="@null" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/data_rate_label"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.OverlineSmall.SemiBold"
+                        android:textColor="@color/gray_400" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="1.2 MB/s"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.H6.ExtraBold"
+                        android:textColor="@color/neutral_50" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ── CAPTURE SETTINGS ───────────────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_content_panel"
+                android:padding="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/capture_settings"
+                    android:textAppearance="@style/TextAppearance.WifiRadar.ParagraphMedium.SemiBold"
+                    android:textColor="@color/white" />
+
+                <!-- Monitor Mode row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/monitor_mode"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.ParagraphSmall.Regular"
+                        android:textColor="@color/white" />
+
+                    <Switch
+                        android:id="@+id/switch_monitor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:showText="false"
+                        android:trackTint="@color/lime_400"
+                        android:thumbTint="@color/white" />
+                </LinearLayout>
+
+                <!-- Promiscuous Mode row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/promiscuous_mode"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.ParagraphSmall.Regular"
+                        android:textColor="@color/white" />
+
+                    <Switch
+                        android:id="@+id/switch_promiscuous"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:showText="false"
+                        android:trackTint="@color/neutral_200"
+                        android:thumbTint="@color/white" />
+                </LinearLayout>
+
+                <!-- Export button -->
+                <LinearLayout
+                    android:id="@+id/btn_export"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:background="@drawable/bg_export_button"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:layout_marginTop="16dp">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_download"
+                        android:contentDescription="@null" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="@string/export_pcap"
+                        android:textAppearance="@style/TextAppearance.WifiRadar.OverlineSmall.SemiBold"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ── LIVE PACKET FEED ───────────────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_content_panel"
+                android:padding="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/live_packet_feed"
+                    android:textAppearance="@style/TextAppearance.WifiRadar.ParagraphMedium.SemiBold"
+                    android:textColor="@color/white" />
+
+                <!-- Packet Card 1: TCP / HTTP Request -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_packet_card"
+                    android:padding="12dp"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="12:34:56:123"
+                            android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold"
+                            android:textColor="@color/zinc_700"
+                            android:textAllCaps="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TCP"
+                            android:textAppearance="@style/TextAppearance.WifiRadar.OverlineSmall.SemiBold"
+                            android:textColor="@color/fuchsia_50"
+                            android:background="@drawable/bg_badge_tcp"
+                            android:paddingStart="6dp"
+                            android:paddingEnd="6dp"
+                            android:paddingTop="0dp"
+                            android:paddingBottom="0dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="8dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/packet_from" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/zinc_500" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="192.168.1.105" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/white" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/packet_to" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/zinc_500" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="192.168.1.1" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/white" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/packet_info" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/zinc_500" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="HTTP Request" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/white" android:textAllCaps="true" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Packet Card 2: UDP / File Transfer -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_packet_card"
+                    android:padding="12dp"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="12:35:00:456"
+                            android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold"
+                            android:textColor="@color/zinc_700"
+                            android:textAllCaps="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UDP"
+                            android:textAppearance="@style/TextAppearance.WifiRadar.OverlineSmall.SemiBold"
+                            android:textColor="@color/primary_50"
+                            android:background="@drawable/bg_badge_udp"
+                            android:paddingStart="6dp"
+                            android:paddingEnd="6dp"
+                            android:paddingTop="0dp"
+                            android:paddingBottom="0dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="8dp">
+
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/packet_from" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/zinc_500" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="192.168.1.106" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/white" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/packet_to" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/zinc_500" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="192.168.1.2" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/white" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/packet_info" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/zinc_500" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="File Transfer" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/white" android:textAllCaps="true" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Packet Card 3: TCP / Ping Request -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_packet_card"
+                    android:padding="12dp"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="12:35:05:789"
+                            android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold"
+                            android:textColor="@color/zinc_700"
+                            android:textAllCaps="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TCP"
+                            android:textAppearance="@style/TextAppearance.WifiRadar.OverlineSmall.SemiBold"
+                            android:textColor="@color/fuchsia_50"
+                            android:background="@drawable/bg_badge_tcp"
+                            android:paddingStart="6dp"
+                            android:paddingEnd="6dp"
+                            android:paddingTop="0dp"
+                            android:paddingBottom="0dp" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="8dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/packet_from" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/zinc_500" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="192.168.1.107" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/white" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/packet_to" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/zinc_500" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="192.168.1.3" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/white" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/packet_info" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/zinc_500" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ping Request" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/white" android:textAllCaps="true" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Packet Card 4: UDP / GET Request -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_packet_card"
+                    android:padding="12dp"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="12:35:10:101"
+                            android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold"
+                            android:textColor="@color/zinc_700"
+                            android:textAllCaps="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UDP"
+                            android:textAppearance="@style/TextAppearance.WifiRadar.OverlineSmall.SemiBold"
+                            android:textColor="@color/primary_50"
+                            android:background="@drawable/bg_badge_udp"
+                            android:paddingStart="6dp"
+                            android:paddingEnd="6dp"
+                            android:paddingTop="0dp"
+                            android:paddingBottom="0dp" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="8dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/packet_from" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/zinc_500" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="192.168.1.108" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/white" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/packet_to" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/zinc_500" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="192.168.1.4" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/white" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/packet_info" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/zinc_500" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="GET Request" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/white" android:textAllCaps="true" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Packet Card 5: TCP / Upload File -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_packet_card"
+                    android:padding="12dp"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="12:35:15:202"
+                            android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold"
+                            android:textColor="@color/zinc_700"
+                            android:textAllCaps="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TCP"
+                            android:textAppearance="@style/TextAppearance.WifiRadar.OverlineSmall.SemiBold"
+                            android:textColor="@color/fuchsia_50"
+                            android:background="@drawable/bg_badge_tcp"
+                            android:paddingStart="6dp"
+                            android:paddingEnd="6dp"
+                            android:paddingTop="0dp"
+                            android:paddingBottom="0dp" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="8dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/packet_from" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/zinc_500" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="192.168.1.109" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/white" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/packet_to" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/zinc_500" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="192.168.1.5" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/white" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/packet_info" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/zinc_500" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Upload File" android:textAppearance="@style/TextAppearance.WifiRadar.LabelSmall.SemiBold" android:textColor="@color/white" android:textAllCaps="true" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

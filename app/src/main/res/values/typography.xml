@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Shipfaster UI Typography — Figma file OcDRS5jE95CsJ9PtiPi6UC
+    Font family: Inter (placeholder: sans-serif — replace with @font/inter once .ttf files are in res/font/)
+    letterSpacing: em units (Figma "tracking %" ÷ 100; Figma "1px" at Nsp = 1÷N)
+    lineSpacingMultiplier: lineHeightPx ÷ textSizePx
+    fontWeight: requires API 26+; silently ignored on API 24–25
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="NewApi">
+
+    <!-- ── Base (required for dot-notation child chains) ──────────── -->
+    <style name="TextAppearance.WifiRadar" parent="TextAppearance.MaterialComponents.Body1" />
+
+    <!-- ══════════════════════════════════════════════════════════════
+         DISPLAY  ·  ls −0.02 em
+    ══════════════════════════════════════════════════════════════ -->
+
+    <!-- Display Large · 52sp · lh 56 (×1.077) · ls −0.02 -->
+    <style name="TextAppearance.WifiRadar.DisplayLarge" parent="TextAppearance.WifiRadar">
+        <item name="android:textSize">52sp</item>
+        <item name="android:lineSpacingMultiplier">1.077</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="TextAppearance.WifiRadar.DisplayLarge.Thin"><item name="android:fontWeight">100</item></style>
+    <style name="TextAppearance.WifiRadar.DisplayLarge.ExtraLight"><item name="android:fontWeight">200</item></style>
+    <style name="TextAppearance.WifiRadar.DisplayLarge.Light"><item name="android:fontWeight">300</item></style>
+    <style name="TextAppearance.WifiRadar.DisplayLarge.Regular"><item name="android:fontWeight">400</item></style>
+    <style name="TextAppearance.WifiRadar.DisplayLarge.Medium"><item name="android:fontWeight">500</item></style>
+    <style name="TextAppearance.WifiRadar.DisplayLarge.SemiBold"><item name="android:fontWeight">600</item></style>
+    <style name="TextAppearance.WifiRadar.DisplayLarge.Bold"><item name="android:fontWeight">700</item></style>
+    <style name="TextAppearance.WifiRadar.DisplayLarge.ExtraBold"><item name="android:fontWeight">800</item></style>
+
+    <!-- Display Small · 44sp · lh 48 (×1.091) · ls −0.02 -->
+    <style name="TextAppearance.WifiRadar.DisplaySmall" parent="TextAppearance.WifiRadar">
+        <item name="android:textSize">44sp</item>
+        <item name="android:lineSpacingMultiplier">1.091</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="TextAppearance.WifiRadar.DisplaySmall.Thin"><item name="android:fontWeight">100</item></style>
+    <style name="TextAppearance.WifiRadar.DisplaySmall.ExtraLight"><item name="android:fontWeight">200</item></style>
+    <style name="TextAppearance.WifiRadar.DisplaySmall.Light"><item name="android:fontWeight">300</item></style>
+    <style name="TextAppearance.WifiRadar.DisplaySmall.Regular"><item name="android:fontWeight">400</item></style>
+    <style name="TextAppearance.WifiRadar.DisplaySmall.Medium"><item name="android:fontWeight">500</item></style>
+    <style name="TextAppearance.WifiRadar.DisplaySmall.SemiBold"><item name="android:fontWeight">600</item></style>
+    <style name="TextAppearance.WifiRadar.DisplaySmall.Bold"><item name="android:fontWeight">700</item></style>
+    <style name="TextAppearance.WifiRadar.DisplaySmall.ExtraBold"><item name="android:fontWeight">800</item></style>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         HEADINGS  ·  ls −0.02 em
+    ══════════════════════════════════════════════════════════════ -->
+
+    <!-- H1 · 40sp · lh 48 (×1.200) · ls −0.02 -->
+    <style name="TextAppearance.WifiRadar.H1" parent="TextAppearance.WifiRadar">
+        <item name="android:textSize">40sp</item>
+        <item name="android:lineSpacingMultiplier">1.200</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="TextAppearance.WifiRadar.H1.Thin"><item name="android:fontWeight">100</item></style>
+    <style name="TextAppearance.WifiRadar.H1.ExtraLight"><item name="android:fontWeight">200</item></style>
+    <style name="TextAppearance.WifiRadar.H1.Light"><item name="android:fontWeight">300</item></style>
+    <style name="TextAppearance.WifiRadar.H1.Regular"><item name="android:fontWeight">400</item></style>
+    <style name="TextAppearance.WifiRadar.H1.Medium"><item name="android:fontWeight">500</item></style>
+    <style name="TextAppearance.WifiRadar.H1.SemiBold"><item name="android:fontWeight">600</item></style>
+    <style name="TextAppearance.WifiRadar.H1.Bold"><item name="android:fontWeight">700</item></style>
+    <style name="TextAppearance.WifiRadar.H1.ExtraBold"><item name="android:fontWeight">800</item></style>
+
+    <!-- H2 · 36sp · lh 44 (×1.222) · ls −0.02 -->
+    <style name="TextAppearance.WifiRadar.H2" parent="TextAppearance.WifiRadar">
+        <item name="android:textSize">36sp</item>
+        <item name="android:lineSpacingMultiplier">1.222</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="TextAppearance.WifiRadar.H2.Thin"><item name="android:fontWeight">100</item></style>
+    <style name="TextAppearance.WifiRadar.H2.ExtraLight"><item name="android:fontWeight">200</item></style>
+    <style name="TextAppearance.WifiRadar.H2.Light"><item name="android:fontWeight">300</item></style>
+    <style name="TextAppearance.WifiRadar.H2.Regular"><item name="android:fontWeight">400</item></style>
+    <style name="TextAppearance.WifiRadar.H2.Medium"><item name="android:fontWeight">500</item></style>
+    <style name="TextAppearance.WifiRadar.H2.SemiBold"><item name="android:fontWeight">600</item></style>
+    <style name="TextAppearance.WifiRadar.H2.Bold"><item name="android:fontWeight">700</item></style>
+    <style name="TextAppearance.WifiRadar.H2.ExtraBold"><item name="android:fontWeight">800</item></style>
+
+    <!-- H3 · 32sp · lh 40 (×1.250) · ls −0.02 -->
+    <style name="TextAppearance.WifiRadar.H3" parent="TextAppearance.WifiRadar">
+        <item name="android:textSize">32sp</item>
+        <item name="android:lineSpacingMultiplier">1.250</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="TextAppearance.WifiRadar.H3.Thin"><item name="android:fontWeight">100</item></style>
+    <style name="TextAppearance.WifiRadar.H3.ExtraLight"><item name="android:fontWeight">200</item></style>
+    <style name="TextAppearance.WifiRadar.H3.Light"><item name="android:fontWeight">300</item></style>
+    <style name="TextAppearance.WifiRadar.H3.Regular"><item name="android:fontWeight">400</item></style>
+    <style name="TextAppearance.WifiRadar.H3.Medium"><item name="android:fontWeight">500</item></style>
+    <style name="TextAppearance.WifiRadar.H3.SemiBold"><item name="android:fontWeight">600</item></style>
+    <style name="TextAppearance.WifiRadar.H3.Bold"><item name="android:fontWeight">700</item></style>
+    <style name="TextAppearance.WifiRadar.H3.ExtraBold"><item name="android:fontWeight">800</item></style>
+
+    <!-- H4 · 28sp · lh 36 (×1.286) · ls −0.02 -->
+    <style name="TextAppearance.WifiRadar.H4" parent="TextAppearance.WifiRadar">
+        <item name="android:textSize">28sp</item>
+        <item name="android:lineSpacingMultiplier">1.286</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="TextAppearance.WifiRadar.H4.Thin"><item name="android:fontWeight">100</item></style>
+    <style name="TextAppearance.WifiRadar.H4.ExtraLight"><item name="android:fontWeight">200</item></style>
+    <style name="TextAppearance.WifiRadar.H4.Light"><item name="android:fontWeight">300</item></style>
+    <style name="TextAppearance.WifiRadar.H4.Regular"><item name="android:fontWeight">400</item></style>
+    <style name="TextAppearance.WifiRadar.H4.Medium"><item name="android:fontWeight">500</item></style>
+    <style name="TextAppearance.WifiRadar.H4.SemiBold"><item name="android:fontWeight">600</item></style>
+    <style name="TextAppearance.WifiRadar.H4.Bold"><item name="android:fontWeight">700</item></style>
+    <style name="TextAppearance.WifiRadar.H4.ExtraBold"><item name="android:fontWeight">800</item></style>
+
+    <!-- H5 · 24sp · lh 32 (×1.333) · ls −0.02 -->
+    <style name="TextAppearance.WifiRadar.H5" parent="TextAppearance.WifiRadar">
+        <item name="android:textSize">24sp</item>
+        <item name="android:lineSpacingMultiplier">1.333</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="TextAppearance.WifiRadar.H5.Thin"><item name="android:fontWeight">100</item></style>
+    <style name="TextAppearance.WifiRadar.H5.ExtraLight"><item name="android:fontWeight">200</item></style>
+    <style name="TextAppearance.WifiRadar.H5.Light"><item name="android:fontWeight">300</item></style>
+    <style name="TextAppearance.WifiRadar.H5.Regular"><item name="android:fontWeight">400</item></style>
+    <style name="TextAppearance.WifiRadar.H5.Medium"><item name="android:fontWeight">500</item></style>
+    <style name="TextAppearance.WifiRadar.H5.SemiBold"><item name="android:fontWeight">600</item></style>
+    <style name="TextAppearance.WifiRadar.H5.Bold"><item name="android:fontWeight">700</item></style>
+    <style name="TextAppearance.WifiRadar.H5.ExtraBold"><item name="android:fontWeight">800</item></style>
+
+    <!-- H6 · 20sp · lh 28 (×1.400) · ls −0.02 -->
+    <style name="TextAppearance.WifiRadar.H6" parent="TextAppearance.WifiRadar">
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingMultiplier">1.400</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="TextAppearance.WifiRadar.H6.Thin"><item name="android:fontWeight">100</item></style>
+    <style name="TextAppearance.WifiRadar.H6.ExtraLight"><item name="android:fontWeight">200</item></style>
+    <style name="TextAppearance.WifiRadar.H6.Light"><item name="android:fontWeight">300</item></style>
+    <style name="TextAppearance.WifiRadar.H6.Regular"><item name="android:fontWeight">400</item></style>
+    <style name="TextAppearance.WifiRadar.H6.Medium"><item name="android:fontWeight">500</item></style>
+    <style name="TextAppearance.WifiRadar.H6.SemiBold"><item name="android:fontWeight">600</item></style>
+    <style name="TextAppearance.WifiRadar.H6.Bold"><item name="android:fontWeight">700</item></style>
+    <style name="TextAppearance.WifiRadar.H6.ExtraBold"><item name="android:fontWeight">800</item></style>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         PARAGRAPHS  ·  ls 0
+    ══════════════════════════════════════════════════════════════ -->
+
+    <!-- Paragraph Large · 18sp · lh 28 (×1.556) · ls 0 -->
+    <style name="TextAppearance.WifiRadar.ParagraphLarge" parent="TextAppearance.WifiRadar">
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingMultiplier">1.556</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="TextAppearance.WifiRadar.ParagraphLarge.Thin"><item name="android:fontWeight">100</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphLarge.ExtraLight"><item name="android:fontWeight">200</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphLarge.Light"><item name="android:fontWeight">300</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphLarge.Regular"><item name="android:fontWeight">400</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphLarge.Medium"><item name="android:fontWeight">500</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphLarge.SemiBold"><item name="android:fontWeight">600</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphLarge.Bold"><item name="android:fontWeight">700</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphLarge.ExtraBold"><item name="android:fontWeight">800</item></style>
+
+    <!-- Paragraph Medium · 16sp · lh 24 (×1.500) · ls 0 -->
+    <style name="TextAppearance.WifiRadar.ParagraphMedium" parent="TextAppearance.WifiRadar">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingMultiplier">1.500</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="TextAppearance.WifiRadar.ParagraphMedium.Thin"><item name="android:fontWeight">100</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphMedium.ExtraLight"><item name="android:fontWeight">200</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphMedium.Light"><item name="android:fontWeight">300</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphMedium.Regular"><item name="android:fontWeight">400</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphMedium.Medium"><item name="android:fontWeight">500</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphMedium.SemiBold"><item name="android:fontWeight">600</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphMedium.Bold"><item name="android:fontWeight">700</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphMedium.ExtraBold"><item name="android:fontWeight">800</item></style>
+
+    <!-- Paragraph Small · 14sp · lh 20 (×1.429) · ls 0 -->
+    <style name="TextAppearance.WifiRadar.ParagraphSmall" parent="TextAppearance.WifiRadar">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingMultiplier">1.429</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="TextAppearance.WifiRadar.ParagraphSmall.Thin"><item name="android:fontWeight">100</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphSmall.ExtraLight"><item name="android:fontWeight">200</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphSmall.Light"><item name="android:fontWeight">300</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphSmall.Regular"><item name="android:fontWeight">400</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphSmall.Medium"><item name="android:fontWeight">500</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphSmall.SemiBold"><item name="android:fontWeight">600</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphSmall.Bold"><item name="android:fontWeight">700</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphSmall.ExtraBold"><item name="android:fontWeight">800</item></style>
+
+    <!-- Paragraph XSmall · 12sp · lh 20 (×1.667) · ls 0 -->
+    <style name="TextAppearance.WifiRadar.ParagraphXSmall" parent="TextAppearance.WifiRadar">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingMultiplier">1.667</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+    <style name="TextAppearance.WifiRadar.ParagraphXSmall.Thin"><item name="android:fontWeight">100</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphXSmall.ExtraLight"><item name="android:fontWeight">200</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphXSmall.Light"><item name="android:fontWeight">300</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphXSmall.Regular"><item name="android:fontWeight">400</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphXSmall.Medium"><item name="android:fontWeight">500</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphXSmall.SemiBold"><item name="android:fontWeight">600</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphXSmall.Bold"><item name="android:fontWeight">700</item></style>
+    <style name="TextAppearance.WifiRadar.ParagraphXSmall.ExtraBold"><item name="android:fontWeight">800</item></style>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         LABELS  ·  ls 0
+    ══════════════════════════════════════════════════════════════ -->
+
+    <!-- Label Large · 16sp · lh 18 (×1.125) · ls 0 -->
+    <style name="TextAppearance.WifiRadar.LabelLarge" parent="TextAppearance.WifiRadar">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingMultiplier">1.125</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="TextAppearance.WifiRadar.LabelLarge.Thin"><item name="android:fontWeight">100</item></style>
+    <style name="TextAppearance.WifiRadar.LabelLarge.ExtraLight"><item name="android:fontWeight">200</item></style>
+    <style name="TextAppearance.WifiRadar.LabelLarge.Light"><item name="android:fontWeight">300</item></style>
+    <style name="TextAppearance.WifiRadar.LabelLarge.Regular"><item name="android:fontWeight">400</item></style>
+    <style name="TextAppearance.WifiRadar.LabelLarge.Medium"><item name="android:fontWeight">500</item></style>
+    <style name="TextAppearance.WifiRadar.LabelLarge.SemiBold"><item name="android:fontWeight">600</item></style>
+    <style name="TextAppearance.WifiRadar.LabelLarge.Bold"><item name="android:fontWeight">700</item></style>
+    <style name="TextAppearance.WifiRadar.LabelLarge.ExtraBold"><item name="android:fontWeight">800</item></style>
+
+    <!-- Label Medium · 14sp · lh 16 (×1.143) · ls 0 -->
+    <style name="TextAppearance.WifiRadar.LabelMedium" parent="TextAppearance.WifiRadar">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingMultiplier">1.143</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="TextAppearance.WifiRadar.LabelMedium.Thin"><item name="android:fontWeight">100</item></style>
+    <style name="TextAppearance.WifiRadar.LabelMedium.ExtraLight"><item name="android:fontWeight">200</item></style>
+    <style name="TextAppearance.WifiRadar.LabelMedium.Light"><item name="android:fontWeight">300</item></style>
+    <style name="TextAppearance.WifiRadar.LabelMedium.Regular"><item name="android:fontWeight">400</item></style>
+    <style name="TextAppearance.WifiRadar.LabelMedium.Medium"><item name="android:fontWeight">500</item></style>
+    <style name="TextAppearance.WifiRadar.LabelMedium.SemiBold"><item name="android:fontWeight">600</item></style>
+    <style name="TextAppearance.WifiRadar.LabelMedium.Bold"><item name="android:fontWeight">700</item></style>
+    <style name="TextAppearance.WifiRadar.LabelMedium.ExtraBold"><item name="android:fontWeight">800</item></style>
+
+    <!-- Label Small · 12sp · lh 14 (×1.167) · ls 0 -->
+    <style name="TextAppearance.WifiRadar.LabelSmall" parent="TextAppearance.WifiRadar">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingMultiplier">1.167</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="TextAppearance.WifiRadar.LabelSmall.Thin"><item name="android:fontWeight">100</item></style>
+    <style name="TextAppearance.WifiRadar.LabelSmall.ExtraLight"><item name="android:fontWeight">200</item></style>
+    <style name="TextAppearance.WifiRadar.LabelSmall.Light"><item name="android:fontWeight">300</item></style>
+    <style name="TextAppearance.WifiRadar.LabelSmall.Regular"><item name="android:fontWeight">400</item></style>
+    <style name="TextAppearance.WifiRadar.LabelSmall.Medium"><item name="android:fontWeight">500</item></style>
+    <style name="TextAppearance.WifiRadar.LabelSmall.SemiBold"><item name="android:fontWeight">600</item></style>
+    <style name="TextAppearance.WifiRadar.LabelSmall.Bold"><item name="android:fontWeight">700</item></style>
+    <style name="TextAppearance.WifiRadar.LabelSmall.ExtraBold"><item name="android:fontWeight">800</item></style>
+
+    <!-- Label XSmall · 10sp · lh 14 (×1.400) · ls 0 -->
+    <style name="TextAppearance.WifiRadar.LabelXSmall" parent="TextAppearance.WifiRadar">
+        <item name="android:textSize">10sp</item>
+        <item name="android:lineSpacingMultiplier">1.400</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="TextAppearance.WifiRadar.LabelXSmall.Thin"><item name="android:fontWeight">100</item></style>
+    <style name="TextAppearance.WifiRadar.LabelXSmall.ExtraLight"><item name="android:fontWeight">200</item></style>
+    <style name="TextAppearance.WifiRadar.LabelXSmall.Light"><item name="android:fontWeight">300</item></style>
+    <style name="TextAppearance.WifiRadar.LabelXSmall.Regular"><item name="android:fontWeight">400</item></style>
+    <style name="TextAppearance.WifiRadar.LabelXSmall.Medium"><item name="android:fontWeight">500</item></style>
+    <style name="TextAppearance.WifiRadar.LabelXSmall.SemiBold"><item name="android:fontWeight">600</item></style>
+    <style name="TextAppearance.WifiRadar.LabelXSmall.Bold"><item name="android:fontWeight">700</item></style>
+    <style name="TextAppearance.WifiRadar.LabelXSmall.ExtraBold"><item name="android:fontWeight">800</item></style>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         OVERLINES  ·  allCaps · ls positive
+         ls = 1px ÷ textSizeSp  (1px at 16sp = 0.0625; at 12sp = 0.083)
+    ══════════════════════════════════════════════════════════════ -->
+
+    <!-- Overline XLarge · 16sp · lh 20 (×1.250) · ls 0.0625 · allCaps -->
+    <style name="TextAppearance.WifiRadar.OverlineXLarge" parent="TextAppearance.WifiRadar">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingMultiplier">1.250</item>
+        <item name="android:letterSpacing">0.0625</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="TextAppearance.WifiRadar.OverlineXLarge.Thin"><item name="android:fontWeight">100</item></style>
+    <style name="TextAppearance.WifiRadar.OverlineXLarge.ExtraLight"><item name="android:fontWeight">200</item></style>
+    <style name="TextAppearance.WifiRadar.OverlineXLarge.Light"><item name="android:fontWeight">300</item></style>
+    <style name="TextAppearance.WifiRadar.OverlineXLarge.Regular"><item name="android:fontWeight">400</item></style>
+    <style name="TextAppearance.WifiRadar.OverlineXLarge.Medium"><item name="android:fontWeight">500</item></style>
+    <style name="TextAppearance.WifiRadar.OverlineXLarge.SemiBold"><item name="android:fontWeight">600</item></style>
+    <style name="TextAppearance.WifiRadar.OverlineXLarge.Bold"><item name="android:fontWeight">700</item></style>
+    <style name="TextAppearance.WifiRadar.OverlineXLarge.ExtraBold"><item name="android:fontWeight">800</item></style>
+
+    <!-- Overline Small · 12sp · lh 20 (×1.667) · ls 0.083 · allCaps -->
+    <style name="TextAppearance.WifiRadar.OverlineSmall" parent="TextAppearance.WifiRadar">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingMultiplier">1.667</item>
+        <item name="android:letterSpacing">0.083</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="TextAppearance.WifiRadar.OverlineSmall.Thin"><item name="android:fontWeight">100</item></style>
+    <style name="TextAppearance.WifiRadar.OverlineSmall.ExtraLight"><item name="android:fontWeight">200</item></style>
+    <style name="TextAppearance.WifiRadar.OverlineSmall.Light"><item name="android:fontWeight">300</item></style>
+    <style name="TextAppearance.WifiRadar.OverlineSmall.Regular"><item name="android:fontWeight">400</item></style>
+    <style name="TextAppearance.WifiRadar.OverlineSmall.Medium"><item name="android:fontWeight">500</item></style>
+    <style name="TextAppearance.WifiRadar.OverlineSmall.SemiBold"><item name="android:fontWeight">600</item></style>
+    <style name="TextAppearance.WifiRadar.OverlineSmall.Bold"><item name="android:fontWeight">700</item></style>
+    <style name="TextAppearance.WifiRadar.OverlineSmall.ExtraBold"><item name="android:fontWeight">800</item></style>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         ITALIC  ·  one style, Regular weight, no underline/strikethrough
+    ══════════════════════════════════════════════════════════════ -->
+
+    <!-- Italic · ParagraphMedium base · Regular Italic -->
+    <style name="TextAppearance.WifiRadar.Italic" parent="TextAppearance.WifiRadar">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingMultiplier">1.500</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:fontWeight">400</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+</resources>

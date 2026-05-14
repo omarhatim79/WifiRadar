@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <!--
+        android:fontWeight requires API 26 but is silently ignored on API 24-25.
+        This is intentional — weight variants degrade gracefully to the base style
+        on older devices. See values/typography.xml header comment.
+    -->
+    <issue id="NewApi">
+        <ignore path="src/main/res/values/typography.xml" />
+    </issue>
+</lint>
